@@ -259,43 +259,6 @@
   .deadline-icon { font-size: 16px; }
   .deadline-date { font-weight: 600; color: var(--gold); }
 
-  /* Contador */
-  .contador-wrap {
-    display: flex;
-    gap: 24px;
-    margin-bottom: 36px;
-    justify-content: center;
-  }
-  .contador-item {
-    text-align: center;
-    min-width: 80px;
-    padding: 14px 20px;
-    border: 1px solid rgba(184,154,110,0.2);
-    background: rgba(184,154,110,0.04);
-  }
-  .contador-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
-    font-weight: 500;
-    color: var(--charcoal);
-    line-height: 1;
-    transition: all 0.3s ease;
-  }
-  .contador-num.si { color: #3a7d5a; }
-  .contador-num.no { color: #b03030; }
-  .contador-label {
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 6px;
-  }
-  .contador-total {
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 0.1em;
-    margin-top: 4px;
-  }
 
   .rsvp-heading {
     font-family: 'Cormorant Garamond', serif;
@@ -922,20 +885,6 @@
   </div>
 
   <!-- Contador en vivo -->
-  <div class="contador-wrap">
-    <div class="contador-item">
-      <div class="contador-num si" id="cntSi">0</div>
-      <div class="contador-label">Asisten</div>
-    </div>
-    <div class="contador-item">
-      <div class="contador-num no" id="cntNo">0</div>
-      <div class="contador-label">No podrán</div>
-    </div>
-    <div class="contador-item">
-      <div class="contador-num" id="cntPend" style="color:var(--muted)">50</div>
-      <div class="contador-label">Pendientes</div>
-    </div>
-  </div>
 
   <div class="rsvp-form" id="rsvpForm">
 
@@ -1446,23 +1395,6 @@
 
   const confirmado = {}; // tracks who already confirmed
 
-  function actualizarContador() {
-    const total = invitadosData.length;
-    let si = 0, no = 0;
-    invitadosData.forEach(i => {
-      if (confirmado[i.id] === 'si') si++;
-      else if (confirmado[i.id] === 'no') no++;
-    });
-    const pend = total - si - no;
-    // animate number change
-    ['cntSi','cntNo','cntPend'].forEach((id, idx) => {
-      const el = document.getElementById(id);
-      const val = [si, no, pend][idx];
-      el.style.transform = 'scale(1.25)';
-      el.textContent = val;
-      setTimeout(() => el.style.transform = 'scale(1)', 200);
-    });
-  }
 
   function confirmar(id, valor) {
     if (confirmado[id]) return; // prevent double-submit
@@ -1490,9 +1422,6 @@
       ? '<span class="check-icon">✓</span> Confirmado'
       : '<span class="check-icon">✕</span> Registrado';
     actions.appendChild(badge);
-
-    // Update counter
-    actualizarContador();
 
     // Send to Google Sheet
     fetch(SHEET_URL, {
