@@ -73,19 +73,19 @@
     animation: fadeUp 1s ease 0.2s forwards;
   }
   .parents-side {
-    font-family: 'Jost', sans-serif;
-    font-weight: 200;
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
-    line-height: 1.9;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    text-transform: none;
+    color: var(--charcoal);
+    line-height: 1.7;
   }
 
   .invitation-line {
     font-family: 'Jost', sans-serif;
     font-weight: 700;
-    font-size: clamp(9px, 2.2vw, 13px);
+    font-size: clamp(12px, 2.2vw, 15px);
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--gold);
@@ -138,7 +138,7 @@
     margin-bottom: 16px;
   }
   .date-label {
-    font-size: 9px;
+    font-size: 12px;
     letter-spacing: 0.35em;
     text-transform: uppercase;
     color: var(--gold);
@@ -152,7 +152,7 @@
     color: var(--charcoal);
   }
   .date-time {
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 0.25em;
     color: var(--muted);
     margin-top: 6px;
@@ -177,7 +177,7 @@
     text-align: center;
   }
   .venue-type {
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--gold);
@@ -205,7 +205,7 @@
     animation: fadeUp 1s ease 1.4s forwards;
   }
   .dresscode-bar span {
-    font-size: 9px;
+    font-size: 12px;
     letter-spacing: 0.35em;
     text-transform: uppercase;
     color: var(--muted);
@@ -236,11 +236,65 @@
   }
 
   .rsvp-eyebrow {
-    font-size: 9px;
+    font-size: 12px;
     letter-spacing: 0.35em;
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 20px;
+  }
+
+  /* Deadline banner */
+  .deadline-banner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(184,154,110,0.1);
+    border: 1px solid rgba(184,154,110,0.3);
+    padding: 12px 20px;
+    margin-bottom: 36px;
+    font-size: 13px;
+    color: var(--charcoal);
+    letter-spacing: 0.05em;
+  }
+  .deadline-icon { font-size: 16px; }
+  .deadline-date { font-weight: 600; color: var(--gold); }
+
+  /* Contador */
+  .contador-wrap {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 36px;
+    justify-content: center;
+  }
+  .contador-item {
+    text-align: center;
+    min-width: 80px;
+    padding: 14px 20px;
+    border: 1px solid rgba(184,154,110,0.2);
+    background: rgba(184,154,110,0.04);
+  }
+  .contador-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--charcoal);
+    line-height: 1;
+    transition: all 0.3s ease;
+  }
+  .contador-num.si { color: #3a7d5a; }
+  .contador-num.no { color: #b03030; }
+  .contador-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .contador-total {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    margin-top: 4px;
   }
 
   .rsvp-heading {
@@ -256,7 +310,7 @@
   .rsvp-heading em { font-style: italic; }
 
   .rsvp-sub {
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 0.15em;
     color: var(--muted);
     text-align: center;
@@ -277,7 +331,7 @@
     gap: 8px;
   }
   .field-label {
-    font-size: 9px;
+    font-size: 12px;
     letter-spacing: 0.28em;
     text-transform: uppercase;
     color: var(--gold-light);
@@ -378,7 +432,7 @@
     font-style: italic;
   }
   .success-text {
-    font-size: 12px;
+    font-size: 13px;
     letter-spacing: 0.15em;
     color: var(--muted);
     line-height: 1.9;
@@ -391,7 +445,7 @@
     min-width: 260px;
   }
   .success-detail p {
-    font-size: 11px;
+    font-size: 13px;
     color: var(--charcoal);
     letter-spacing: 0.1em;
     line-height: 2;
@@ -405,7 +459,7 @@
     text-align: center;
   }
   footer p {
-    font-size: 9px;
+    font-size: 12px;
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: rgba(247,243,238,0.25);
@@ -480,7 +534,7 @@
   .destino-icon { font-size: 22px; flex-shrink: 0; }
   .destino-info { flex: 1; }
   .destino-tipo {
-    font-size: 8px;
+    font-size: 11px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--gold);
@@ -500,7 +554,7 @@
   }
 
   .box-section-label {
-    font-size: 9px;
+    font-size: 12px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--charcoal);
@@ -537,15 +591,17 @@
   .btn-si, .btn-no {
     font-family: 'Jost', sans-serif;
     font-weight: 400;
-    font-size: 9px;
+    font-size: 12px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    padding: 10px 16px;
+    padding: 14px 20px;
+    min-height: 48px;
     border: 1px solid rgba(44,40,36,0.25);
     background: transparent;
     color: rgba(44,40,36,0.45);
     cursor: pointer;
     transition: all 0.2s;
+    flex: 1;
   }
   .btn-si.active {
     border-color: #3a7d5a;
@@ -559,6 +615,44 @@
   }
   .btn-si:hover { border-color: #3a7d5a; color: #3a7d5a; }
   .btn-no:hover { border-color: #b03030; color: #b03030; }
+
+  /* Fila confirmada */
+  .invitado-row.confirmado,
+  .pareja-row.confirmado {
+    opacity: 0.7;
+    transition: opacity 0.4s ease;
+  }
+
+  /* Check animado */
+  @keyframes popIn {
+    0%   { transform: scale(0); opacity: 0; }
+    60%  { transform: scale(1.2); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  .check-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    font-family: 'Jost', sans-serif;
+    margin-top: 6px;
+    animation: popIn 0.35s ease forwards;
+  }
+  .check-badge .check-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+  .check-badge.si { color: #3a7d5a; }
+  .check-badge.si .check-icon { background: #3a7d5a; color: white; }
+  .check-badge.no { color: #b03030; }
+  .check-badge.no .check-icon { background: #b03030; color: white; }
 
   /* Pareja */
   .pareja-row {
@@ -588,7 +682,7 @@
   }
   .pareja-tag {
     font-family: 'Jost', sans-serif;
-    font-size: 9px;
+    font-size: 11px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--gold);
@@ -648,7 +742,7 @@
       width: 100%;
       gap: 0;
     }
-    .parents-side { font-size: 9px; letter-spacing: 0.1em; }
+    .parents-side { font-size: 13px; letter-spacing: 0.04em; }
     .parents-side:last-child { text-align: right; }
     .invitation-line { 
       font-size: 10px; 
@@ -701,7 +795,7 @@
 
     /* Boxes */
     .personas-box { padding: 16px 12px; }
-    .box-section-label { font-size: 10px; }
+    .box-section-label { font-size: 12px; }
 
     /* Destinos */
     .destinos-wrap { max-width: 100%; }
@@ -709,11 +803,11 @@
     .destino-nombre { font-size: 15px; }
 
     /* Botón confirmar */
-    .rsvp-btn { font-size: 11px; padding: 16px; }
+    .rsvp-btn { font-size: 13px; padding: 16px; }
 
     /* Footer */
-    footer p { font-size: 8px; }
-    footer p:last-child { font-size: 10px; }
+    footer p { font-size: 11px; }
+    footer p:last-child { font-size: 12px; }
 
     /* Persona row */
     .persona-row { grid-template-columns: 1fr; }
@@ -723,7 +817,7 @@
   @media (max-width: 380px) {
     .name { font-size: 24px; }
     .ampersand { font-size: 36px; }
-    .btn-si, .btn-no { font-size: 9px; padding: 10px 6px; }
+    .btn-si, .btn-no { font-size: 11px; padding: 12px 8px; }
     .invitado-nombre { font-size: 14px; }
     .pareja-nombres { font-size: 13px; }
   }
@@ -790,12 +884,12 @@
     <a class="venue-card" href="https://www.google.com/maps/place/Parroquia+Ni%C3%B1o+Jes%C3%BAs+Pe%C3%B1alol%C3%A9n/@-33.5006802,-70.5175234,1193m/data=!3m1!1e3!4m12!1m5!3m4!2zMzPCsDMwJzAyLjUiUyA3MMKwMzEnMDMuMSJX!8m2!3d-33.5006802!4d-70.5175234!3m5!1s0x9662d33bcabe5f51:0xec05d7e20384654a!8m2!3d-33.501067!4d-70.5179304!16s%2Fg%2F11hdj40jx4?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" style="text-decoration:none;display:block;">
       <div class="venue-type">Ceremonia religiosa</div>
       <div class="venue-name">Parroquia del Niño Jesús</div>
-      <div style="font-size:9px;letter-spacing:0.15em;color:var(--gold);margin-top:8px">📍 Ver en Google Maps →</div>
+      <div style="font-size:12px;letter-spacing:0.15em;color:var(--gold);margin-top:8px">📍 Ver en Google Maps →</div>
     </a>
     <a class="venue-card" href="https://www.google.com/maps/place/Casona+Macul/@-33.493965,-70.5421836,94m/data=!3m1!1e3!4m6!3m5!1s0x9662d1933bf8de97:0x8a9c8e88c12f7cbe!8m2!3d-33.493893!4d-70.5420605!16s%2Fg%2F11clwm6hb6?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" style="text-decoration:none;display:block;">
       <div class="venue-type">Recepción</div>
       <div class="venue-name">Casona Macul</div>
-      <div style="font-size:9px;letter-spacing:0.15em;color:var(--gold);margin-top:8px">📍 Ver en Google Maps →</div>
+      <div style="font-size:12px;letter-spacing:0.15em;color:var(--gold);margin-top:8px">📍 Ver en Google Maps →</div>
     </a>
   </div>
 
@@ -821,6 +915,28 @@
   <h2 class="rsvp-heading">¿Nos acompañas <em>ese día?</em></h2>
   <p class="rsvp-sub">Por favor confírmanos antes del 15 de Diciembre de 2026</p>
 
+  <!-- Deadline -->
+  <div class="deadline-banner">
+    <span class="deadline-icon">📅</span>
+    <span>Fecha límite de confirmación: <span class="deadline-date">15 de Diciembre de 2026</span></span>
+  </div>
+
+  <!-- Contador en vivo -->
+  <div class="contador-wrap">
+    <div class="contador-item">
+      <div class="contador-num si" id="cntSi">0</div>
+      <div class="contador-label">Asisten</div>
+    </div>
+    <div class="contador-item">
+      <div class="contador-num no" id="cntNo">0</div>
+      <div class="contador-label">No podrán</div>
+    </div>
+    <div class="contador-item">
+      <div class="contador-num" id="cntPend" style="color:var(--muted)">50</div>
+      <div class="contador-label">Pendientes</div>
+    </div>
+  </div>
+
   <div class="rsvp-form" id="rsvpForm">
 
         <!-- ── BOX 1: SOLOS ── -->
@@ -831,71 +947,71 @@
       <div class="invitado-row" id="row-s1">
         <div class="invitado-nombre">Carlos Fuentes Rojas</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('s1','si')">Asistiré</button>
-          <button class="btn-no" onclick="toggleAsistencia('s1','no')">No podré</button>
+          <button class="btn-si" onclick="confirmar('s1','si')">Asistiré</button>
+          <button class="btn-no" onclick="confirmar('s1','no')">No podré</button>
         </div>
       </div>
       <div class="invitado-row" id="row-s2">
         <div class="invitado-nombre">Valentina Morales Soto</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('s2','si')">Asistiré</button>
-          <button class="btn-no" onclick="toggleAsistencia('s2','no')">No podré</button>
+          <button class="btn-si" onclick="confirmar('s2','si')">Asistiré</button>
+          <button class="btn-no" onclick="confirmar('s2','no')">No podré</button>
         </div>
       </div>
       <div class="invitado-row" id="row-s3">
         <div class="invitado-nombre">Rodrigo Castillo Vera</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('s3','si')">Asistiré</button>
-          <button class="btn-no" onclick="toggleAsistencia('s3','no')">No podré</button>
+          <button class="btn-si" onclick="confirmar('s3','si')">Asistiré</button>
+          <button class="btn-no" onclick="confirmar('s3','no')">No podré</button>
         </div>
       </div>
       <div class="invitado-row" id="row-s4">
         <div class="invitado-nombre">Fernanda Díaz Herrera</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('s4','si')">Asistiré</button>
-          <button class="btn-no" onclick="toggleAsistencia('s4','no')">No podré</button>
+          <button class="btn-si" onclick="confirmar('s4','si')">Asistiré</button>
+          <button class="btn-no" onclick="confirmar('s4','no')">No podré</button>
         </div>
       </div>
       <div class="invitado-row" id="row-s5">
         <div class="invitado-nombre">Sebastián Muñoz Lagos</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('s5','si')">Asistiré</button>
-          <button class="btn-no" onclick="toggleAsistencia('s5','no')">No podré</button>
+          <button class="btn-si" onclick="confirmar('s5','si')">Asistiré</button>
+          <button class="btn-no" onclick="confirmar('s5','no')">No podré</button>
         </div>
       </div>
       <div class="invitado-row" id="row-s6">
         <div class="invitado-nombre">Pamela Riquelme Torres</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('s6','si')">Asistiré</button>
-          <button class="btn-no" onclick="toggleAsistencia('s6','no')">No podré</button>
+          <button class="btn-si" onclick="confirmar('s6','si')">Asistiré</button>
+          <button class="btn-no" onclick="confirmar('s6','no')">No podré</button>
         </div>
       </div>
       <div class="invitado-row" id="row-s7">
         <div class="invitado-nombre">Felipe Contreras Ossa</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('s7','si')">Asistiré</button>
-          <button class="btn-no" onclick="toggleAsistencia('s7','no')">No podré</button>
+          <button class="btn-si" onclick="confirmar('s7','si')">Asistiré</button>
+          <button class="btn-no" onclick="confirmar('s7','no')">No podré</button>
         </div>
       </div>
       <div class="invitado-row" id="row-s8">
         <div class="invitado-nombre">Catalina Vega Molina</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('s8','si')">Asistiré</button>
-          <button class="btn-no" onclick="toggleAsistencia('s8','no')">No podré</button>
+          <button class="btn-si" onclick="confirmar('s8','si')">Asistiré</button>
+          <button class="btn-no" onclick="confirmar('s8','no')">No podré</button>
         </div>
       </div>
       <div class="invitado-row" id="row-s9">
         <div class="invitado-nombre">Jorge Herrera Bravo</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('s9','si')">Asistiré</button>
-          <button class="btn-no" onclick="toggleAsistencia('s9','no')">No podré</button>
+          <button class="btn-si" onclick="confirmar('s9','si')">Asistiré</button>
+          <button class="btn-no" onclick="confirmar('s9','no')">No podré</button>
         </div>
       </div>
       <div class="invitado-row" id="row-s10">
         <div class="invitado-nombre">Daniela Núñez Araya</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('s10','si')">Asistiré</button>
-          <button class="btn-no" onclick="toggleAsistencia('s10','no')">No podré</button>
+          <button class="btn-si" onclick="confirmar('s10','si')">Asistiré</button>
+          <button class="btn-no" onclick="confirmar('s10','no')">No podré</button>
         </div>
       </div>
     </div>
@@ -908,289 +1024,286 @@
       <div class="pareja-row" id="row-p1">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Andrés Vega Torres <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Camila Reyes Pinto</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p1','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p1','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p1','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p1','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p2">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Felipe Ramos Godoy <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Daniela Flores Araya</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p2','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p2','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p2','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p2','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p3">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Ignacio Pérez Moya <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Javiera Sánchez Ruiz</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p3','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p3','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p3','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p3','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p4">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Mauricio Silva Bravo <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Constanza López Núñez</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p4','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p4','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p4','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p4','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p5">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Diego Carrasco Ossa <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Paola Gutiérrez Mena</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p5','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p5','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p5','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p5','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p6">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Cristóbal Navarro Leal <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Bárbara Espinoza Cid</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p6','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p6','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p6','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p6','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p7">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Tomás Herrera Acuña <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Francisca Castro Tapia</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p7','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p7','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p7','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p7','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p8">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Nicolás Ortega Peña <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Andrea Molina Vidal</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p8','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p8','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p8','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p8','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p9">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Javier Romero Ibáñez <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Carolina Vargas Trejo</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p9','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p9','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p9','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p9','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p10">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Matías Contreras Ríos <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Pilar Aguilera Soler</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p10','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p10','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p10','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p10','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p11">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Roberto Fuentes Vera <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Patricia Morales Soto</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p11','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p11','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p11','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p11','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p12">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Gonzalo Castillo Rojas <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Isabel Díaz Herrera</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p12','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p12','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p12','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p12','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p13">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Sebastián Torres Pinto <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Valentina Lagos Bravo</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p13','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p13','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p13','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p13','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p14">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Ricardo Núñez Cid <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Carla Espinoza Mena</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p14','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p14','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p14','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p14','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p15">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Alejandro Reyes Godoy <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Sofía Pérez Araya</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p15','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p15','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p15','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p15','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p16">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Marcelo Vásquez Rojas <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Claudia Muñoz Tapia</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p16','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p16','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p16','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p16','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p17">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Eduardo Soto Pinto <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Mariana Ramos Castro</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p17','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p17','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p17','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p17','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p18">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Patricio Álvarez Vera <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Lorena Fuentes Ríos</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p18','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p18','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p18','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p18','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p19">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Jaime Gutiérrez Mena <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Sandra Herrera Acuña</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p19','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p19','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p19','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p19','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p20">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Héctor Morales Bravo <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Viviana Ortega Soler</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p20','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p20','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p20','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p20','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p21">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Luis Rojas Vargas <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Carmen Silva Pinto</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p21','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p21','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p21','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p21','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p22">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Iván Espinoza Ruiz <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Teresa Contreras Godoy</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p22','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p22','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p22','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p22','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p23">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Oscar Molina Araya <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Rosa Aguilera Díaz</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p23','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p23','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p23','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p23','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p24">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Manuel Pérez Cid <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Gloria Navarro López</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p24','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p24','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p24','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p24','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p25">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Sergio Castro Tapia <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Ana Flores Vera</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p25','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p25','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p25','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p25','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p26">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Fernando Reyes Bravo <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Cecilia Castillo Mena</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p26','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p26','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p26','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p26','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p27">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Guillermo Lagos Soto <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Natalia Riquelme Ríos</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p27','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p27','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p27','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p27','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p28">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Claudio Vargas Godoy <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Alejandra Muñoz Pinto</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p28','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p28','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p28','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p28','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p29">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Enrique Herrera Ruiz <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Verónica Torres Acuña</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p29','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p29','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p29','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p29','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p30">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Alberto Díaz Molina <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Irene Fuentes Soler</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p30','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p30','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p30','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p30','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p31">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Ramón Núñez Espinoza <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Elisa Pérez Castro</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p31','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p31','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p31','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p31','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p32">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Arturo Fuentes Álvarez <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Piedad Morales Bravo</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p32','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p32','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p32','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p32','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p33">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Víctor Contreras Rojas <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Blanca Vásquez Díaz</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p33','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p33','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p33','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p33','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p34">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Raúl Gutiérrez Pinto <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Olga Reyes Vargas</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p34','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p34','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p34','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p34','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p35">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Esteban Silva Tapia <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Beatriz Ortega Ruiz</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p35','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p35','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p35','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p35','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p36">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Marco Castillo Araya <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Silvia Herrera Mena</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p36','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p36','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p36','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p36','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p37">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Bruno Morales Cid <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Ximena Lagos Godoy</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p37','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p37','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p37','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p37','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p38">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Nelson Ramos Vera <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Fabiola Espinoza Soto</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p38','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p38','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p38','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p38','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p39">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Hugo Flores Ríos <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Roxana Navarro Bravo</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p39','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p39','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p39','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p39','no')">No podremos</button>
         </div>
       </div>
       <div class="pareja-row" id="row-p40">
         <div class="pareja-nombres"><span class="pareja-tag">Él</span> Alfredo Vega Soler <span class="pareja-amp">&</span> <span class="pareja-tag">Ella</span> Miriam Contreras Pinto</div>
         <div class="invitado-actions">
-          <button class="btn-si active" onclick="toggleAsistencia('p40','si')">Asistiremos</button>
-          <button class="btn-no" onclick="toggleAsistencia('p40','no')">No podremos</button>
+          <button class="btn-si" onclick="confirmar('p40','si')">Asistiremos</button>
+          <button class="btn-no" onclick="confirmar('p40','no')">No podremos</button>
         </div>
       </div>
     </div>
 
-    <!-- Confirmar -->
-    <div style="margin-top:24px">
-      <button class="rsvp-btn" onclick="enviarRSVP()">Confirmar asistencia</button>
-    </div>
+    <!-- Botón de confirmación global eliminado: cada persona confirma con un solo click -->
 
   </div>
 
@@ -1204,13 +1317,13 @@
 
   <!-- Links destinos (se muestran al confirmar asistencia) -->
   <div class="destinos-wrap" id="destinosWrap">
-    <p style="font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:4px">¿Cómo llegar?</p>
+    <p style="font-size:12px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:4px">¿Cómo llegar?</p>
     <a class="destino-card" href="https://www.google.com/maps/place/Parroquia+Ni%C3%B1o+Jes%C3%BAs+Pe%C3%B1alol%C3%A9n/@-33.5006802,-70.5175234,1193m/data=!3m1!1e3!4m12!1m5!3m4!2zMzPCsDMwJzAyLjUiUyA3MMKwMzEnMDMuMSJX!8m2!3d-33.5006802!4d-70.5175234!3m5!1s0x9662d33bcabe5f51:0xec05d7e20384654a!8m2!3d-33.501067!4d-70.5179304!16s%2Fg%2F11hdj40jx4?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">
       <span class="destino-icon">⛪</span>
       <div class="destino-info">
         <div class="destino-tipo">Ceremonia religiosa · 18:00 hrs</div>
         <div class="destino-nombre">Parroquia del Niño Jesús</div>
-        <div style="font-size:9px;color:rgba(212,184,150,0.5);margin-top:3px">Av. Quilín 11300, Peñalolén</div>
+        <div style="font-size:12px;color:rgba(212,184,150,0.5);margin-top:3px">Av. Quilín 11300, Peñalolén</div>
       </div>
       <span class="destino-arrow">→</span>
     </a>
@@ -1219,7 +1332,7 @@
       <div class="destino-info">
         <div class="destino-tipo">Recepción</div>
         <div class="destino-nombre">Casona Macul</div>
-        <div style="font-size:9px;color:rgba(212,184,150,0.5);margin-top:3px">Av. Las Perdices 5101, Peñalolén</div>
+        <div style="font-size:12px;color:rgba(212,184,150,0.5);margin-top:3px">Av. Las Perdices 5101, Peñalolén</div>
       </div>
       <span class="destino-arrow">→</span>
     </a>
@@ -1227,79 +1340,58 @@
 
 </section>
 
+<!-- WhatsApp Flotante -->
+<a class="wa-float" href="https://wa.me/56979687195?text=Hola%2C%20tengo%20una%20consulta%20sobre%20el%20matrimonio%20de%20Viviana%20%26%20%C3%81lvaro%20%F0%9F%92%8D" target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="white">
+    <path d="M16 1C7.716 1 1 7.716 1 16c0 2.628.686 5.1 1.886 7.246L1 31l7.95-1.858A14.94 14.94 0 0 0 16 31c8.284 0 15-6.716 15-15S24.284 1 16 1zm0 27.4a12.34 12.34 0 0 1-6.29-1.72l-.452-.268-4.72 1.104 1.13-4.6-.294-.472A12.36 12.36 0 0 1 3.6 16C3.6 9.148 9.148 3.6 16 3.6S28.4 9.148 28.4 16 22.852 28.4 16 28.4zm6.77-9.22c-.37-.186-2.19-1.08-2.53-1.202-.34-.122-.586-.186-.832.186-.246.372-.956 1.202-1.172 1.448-.216.246-.432.278-.802.092-.37-.186-1.562-.576-2.976-1.836-1.1-.982-1.842-2.194-2.058-2.564-.216-.372-.022-.572.162-.756.166-.166.37-.432.556-.648.186-.216.246-.372.37-.618.122-.246.06-.464-.032-.65-.092-.186-.832-2.006-1.14-2.746-.3-.722-.604-.624-.832-.636l-.71-.012c-.246 0-.648.092-.988.464-.34.372-1.296 1.266-1.296 3.086s1.326 3.578 1.512 3.824c.186.246 2.61 3.986 6.324 5.59.884.382 1.572.61 2.11.78.886.282 1.692.242 2.33.146.71-.106 2.19-.896 2.5-1.762.308-.866.308-1.608.216-1.762-.092-.154-.34-.246-.71-.432z"/>
+  </svg>
+  <span class="wa-label">¿Consultas?</span>
+</a>
+
+<style>
+.wa-float {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  z-index: 999;
+  background: #25D366;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px 12px 16px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+.wa-float:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(37,211,102,0.45);
+}
+.wa-label { white-space: nowrap; }
+@media (max-width: 480px) {
+  .wa-float { padding: 13px; border-radius: 50%; }
+  .wa-label { display: none; }
+}
+</style>
+
 <footer>
   <p>Viviana & Álvaro · 15 · 01 · 2027 · Santiago de Chile</p>
   <p style="margin-top:10px;font-size:11px;letter-spacing:0.18em;opacity:0.7">¿Quieres una invitación como esta? <a href="https://soluciones.healthfolio.lat/" target="_blank" rel="noopener" style="color:var(--gold-light);text-decoration:none;">soluciones.healthfolio.lat</a></p>
 </footer>
 
 <script>
-  // Estado por invitado: default = 'si'
-    const estado = {
-    's1': 'si',
-    's2': 'si',
-    's3': 'si',
-    's4': 'si',
-    's5': 'si',
-    's6': 'si',
-    's7': 'si',
-    's8': 'si',
-    's9': 'si',
-    's10': 'si',
-    'p1': 'si',
-    'p2': 'si',
-    'p3': 'si',
-    'p4': 'si',
-    'p5': 'si',
-    'p6': 'si',
-    'p7': 'si',
-    'p8': 'si',
-    'p9': 'si',
-    'p10': 'si',
-    'p11': 'si',
-    'p12': 'si',
-    'p13': 'si',
-    'p14': 'si',
-    'p15': 'si',
-    'p16': 'si',
-    'p17': 'si',
-    'p18': 'si',
-    'p19': 'si',
-    'p20': 'si',
-    'p21': 'si',
-    'p22': 'si',
-    'p23': 'si',
-    'p24': 'si',
-    'p25': 'si',
-    'p26': 'si',
-    'p27': 'si',
-    'p28': 'si',
-    'p29': 'si',
-    'p30': 'si',
-    'p31': 'si',
-    'p32': 'si',
-    'p33': 'si',
-    'p34': 'si',
-    'p35': 'si',
-    'p36': 'si',
-    'p37': 'si',
-    'p38': 'si',
-    'p39': 'si',
-    'p40': 'si',
-  };
+  // Estado por invitado: manejado directamente por confirmar()
 
-  function toggleAsistencia(id, valor) {
-    estado[id] = valor;
-    const row = document.getElementById('row-' + id);
-    const btnSi = row.querySelector('.btn-si');
-    const btnNo = row.querySelector('.btn-no');
-    btnSi.classList.toggle('active', valor === 'si');
-    btnNo.classList.toggle('active', valor === 'no');
-  }
 
   const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxjh3eL5Em8cNLSdAOM_zoHUHvYOq4Z-HjhGcasQhhj78-G9D3lPLrfAyRY8ww6qKv9JQ/exec';
 
-  function enviarRSVP() {
-        const invitados = [
+  const invitadosData = [
       { nombre: 'Carlos Fuentes Rojas', id: 's1', tipo: 'solo' },
       { nombre: 'Valentina Morales Soto', id: 's2', tipo: 'solo' },
       { nombre: 'Rodrigo Castillo Vera', id: 's3', tipo: 'solo' },
@@ -1350,39 +1442,100 @@
       { nombre: 'Nelson Ramos Vera & Fabiola Espinoza Soto', id: 'p38', tipo: 'pareja' },
       { nombre: 'Hugo Flores Ríos & Roxana Navarro Bravo', id: 'p39', tipo: 'pareja' },
       { nombre: 'Alfredo Vega Soler & Miriam Contreras Pinto', id: 'p40', tipo: 'pareja' },
-    ];
+  ];
 
-    const confirmados = invitados.filter(i => estado[i.id] === 'si');
-    const rechazados  = invitados.filter(i => estado[i.id] === 'no');
+  const confirmado = {}; // tracks who already confirmed
 
-    document.getElementById('rsvpForm').style.display = 'none';
+  function actualizarContador() {
+    const total = invitadosData.length;
+    let si = 0, no = 0;
+    invitadosData.forEach(i => {
+      if (confirmado[i.id] === 'si') si++;
+      else if (confirmado[i.id] === 'no') no++;
+    });
+    const pend = total - si - no;
+    // animate number change
+    ['cntSi','cntNo','cntPend'].forEach((id, idx) => {
+      const el = document.getElementById(id);
+      const val = [si, no, pend][idx];
+      el.style.transform = 'scale(1.25)';
+      el.textContent = val;
+      setTimeout(() => el.style.transform = 'scale(1)', 200);
+    });
+  }
 
-    // Enviar al Google Sheet
-    invitados.forEach(inv => {
-      fetch(SHEET_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          nombre:     inv.nombre,
-          asistencia: estado[inv.id] === 'si' ? 'Asiste' : 'No asiste',
-          personas:   inv.tipo === 'pareja' ? '2' : '1'
-        })
-      });
+  function confirmar(id, valor) {
+    if (confirmado[id]) return; // prevent double-submit
+    confirmado[id] = valor;
+
+    const inv = invitadosData.find(i => i.id === id);
+    const row = document.getElementById('row-' + id);
+
+    // Update button UI
+    const btnSi = row.querySelector('.btn-si');
+    const btnNo = row.querySelector('.btn-no');
+    btnSi.classList.toggle('active', valor === 'si');
+    btnNo.classList.toggle('active', valor === 'no');
+    btnSi.disabled = true;
+    btnNo.disabled = true;
+
+    // Fade row
+    row.classList.add('confirmado');
+
+    // Animated badge
+    const actions = row.querySelector('.invitado-actions');
+    const badge = document.createElement('div');
+    badge.className = 'check-badge ' + valor;
+    badge.innerHTML = valor === 'si'
+      ? '<span class="check-icon">✓</span> Confirmado'
+      : '<span class="check-icon">✕</span> Registrado';
+    actions.appendChild(badge);
+
+    // Update counter
+    actualizarContador();
+
+    // Send to Google Sheet
+    fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        nombre:     inv.nombre,
+        asistencia: valor === 'si' ? 'Asiste' : 'No asiste',
+        personas:   inv.tipo === 'pareja' ? '2' : '1'
+      })
     });
 
-    const success = document.getElementById('successMsg');
-    document.getElementById('successTitle').textContent = confirmados.length > 0 ? '¡Gracias por confirmar!' : 'Respuesta registrada';
-    document.getElementById('successText').innerHTML = 'La información ha sido enviada a los novios.';
+    // Check if ALL have confirmed
+    const done = Object.keys(confirmado).length;
+    if (done === invitadosData.length) mostrarResumen();
+  }
+
+  function mostrarResumen() {
+    const confirmados = invitadosData.filter(i => confirmado[i.id] === true);
+    // confirmado stores 'true' for clicked; we need the valor — fix: store valor instead
+    // Already stored as true above; rebuild from button state
+    const asisten = invitadosData.filter(i => {
+      const row = document.getElementById('row-' + i.id);
+      return row && row.querySelector('.btn-si.active');
+    });
+    const noAsisten = invitadosData.filter(i => {
+      const row = document.getElementById('row-' + i.id);
+      return row && row.querySelector('.btn-no.active');
+    });
+
+    document.getElementById('rsvpForm').style.display = 'none';
+    document.getElementById('successTitle').textContent = '¡Gracias a todos!';
+    document.getElementById('successText').innerHTML = 'Todas las confirmaciones han sido enviadas a los novios.';
     document.getElementById('successDetail').innerHTML = `
       <p>📅 Viernes 15 de Enero de 2027 · 18:00 hrs</p>
       <p>⛪ Av. Quilín 11300, Peñalolén &nbsp;|&nbsp; 🥂 Av. Las Perdices 5101, Peñalolén</p>
-      ${confirmados.length ? `<p style="margin-top:12px;font-size:9px;letter-spacing:0.2em;color:rgba(212,184,150,0.5)">ASISTEN</p>${confirmados.map(i=>`<p>✅ ${i.nombre}</p>`).join('')}` : ''}
-      ${rechazados.length  ? `<p style="margin-top:10px;font-size:9px;letter-spacing:0.2em;color:rgba(212,184,150,0.5)">NO PODRÁN ASISTIR</p>${rechazados.map(i=>`<p>❌ ${i.nombre}</p>`).join('')}` : ''}
+      ${asisten.length ? `<p style="margin-top:12px;font-size:12px;letter-spacing:0.2em;color:rgba(212,184,150,0.5)">ASISTEN</p>${asisten.map(i=>`<p>✅ ${i.nombre}</p>`).join('')}` : ''}
+      ${noAsisten.length ? `<p style="margin-top:10px;font-size:12px;letter-spacing:0.2em;color:rgba(212,184,150,0.5)">NO PODRÁN ASISTIR</p>${noAsisten.map(i=>`<p>❌ ${i.nombre}</p>`).join('')}` : ''}
     `;
-
+    const success = document.getElementById('successMsg');
     success.classList.add('show');
-    if (confirmados.length > 0) document.getElementById('destinosWrap').classList.add('show');
+    if (asisten.length > 0) document.getElementById('destinosWrap').classList.add('show');
     setTimeout(() => success.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
   }
 
