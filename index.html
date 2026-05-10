@@ -85,13 +85,15 @@
   .invitation-line {
     font-family: 'Jost', sans-serif;
     font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.3em;
+    font-size: clamp(9px, 2.2vw, 13px);
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 36px;
     opacity: 0;
     animation: fadeUp 1s ease 0.4s forwards;
+    text-align: center;
+    white-space: nowrap;
   }
 
   .names-block {
@@ -640,7 +642,20 @@
   @media (max-width: 768px) {
     /* Hero */
     .hero { padding: 40px 16px; }
-    .parents-block { flex-direction: column; gap: 12px; text-align: center; }
+    .parents-block { 
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      gap: 0;
+    }
+    .parents-side { font-size: 9px; letter-spacing: 0.1em; }
+    .parents-side:last-child { text-align: right; }
+    .invitation-line { 
+      font-size: 10px; 
+      letter-spacing: 0.15em;
+      text-align: center;
+      padding: 0 8px;
+    }
     .corner-ornament { width: 60px; height: 60px; }
     .name { font-size: clamp(28px, 8vw, 48px); }
     .venues { grid-template-columns: 1fr; }
