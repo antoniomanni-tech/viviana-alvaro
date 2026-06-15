@@ -107,17 +107,15 @@ input::placeholder{letter-spacing:0.1em;color:#938a78;font-size:0.9rem}
   <!-- S1: Código -->
   <div class="screen active" id="s1">
     <div class="sub">Confirma tu asistencia</div>
-    <a class="fala-box" href="https://www.falabella.com/falabella-cl/category/cat40055/Lista-de-Novios?giftListId=2104438" target="_blank">
-      <div class="fala-lbl">🎁 Lista de novios · Falabella</div>
-      <div class="fala-num">2104438</div>
-      <div class="fala-link">Ver lista de regalos en falabella.com →</div>
-    </a>
+    
     <p style="font-size:0.95rem;color:var(--cafe-claro);letter-spacing:0.08em;margin-bottom:1rem;line-height:1.6">Ingresa el código personal que recibiste por WhatsApp</p>
     <input type="text" id="cod" placeholder="0000" maxlength="4" oninput="this.value=this.value.replace(/[^0-9]/g,'')" inputmode="numeric">
     <div class="err" id="err">Código no encontrado. Verifica e intenta nuevamente.</div>
     <button class="btn btn-s" onclick="verificar()">Continuar →</button>
     <p style="font-size:0.85rem;color:#938a78;margin-top:0.8rem;letter-spacing:0.06em;line-height:1.5">Ingresa los 4 dígitos de tu código personal</p>
   </div>
+
+
 
   <!-- S2: Confirmar -->
   <div class="screen" id="s2">
@@ -140,14 +138,19 @@ input::placeholder{letter-spacing:0.1em;color:#938a78;font-size:0.9rem}
     <div class="dato"><strong>Ceremonia</strong> &nbsp;Parroquia del Niño Jesús</div>
     <div class="dato"><strong>Recepción</strong> &nbsp;Casona Macul</div>
     <div class="dato" style="margin-top:0.3rem">✦ Formal</div>
-    <a class="fala-box" href="https://www.falabella.com/falabella-cl/category/cat40055/Lista-de-Novios?giftListId=2104438" target="_blank" style="margin-top:1.2rem;margin-bottom:0">
-      <div class="fala-lbl">🎁 Lista de novios · Falabella</div>
-      <div class="fala-num">2104438</div>
-      <div class="fala-link">Ver lista de regalos en falabella.com →</div>
-    </a>
+    
     <p style="font-size:0.85rem;color:#938a78;margin-top:0.8rem;letter-spacing:0.06em">Por favor confirmen antes del 15 de diciembre de 2026</p>
   </div>
 
+</div>
+
+<!-- FALABELLA SEPARADO -->
+<div style="background:var(--blanco);border:1px solid var(--dorado-claro);padding:1.5rem;margin-top:1.5rem;text-align:center;max-width:420px;width:100%">
+  <a href="https://www.falabella.com/falabella-cl/category/cat40055/Lista-de-Novios?giftListId=2104438" target="_blank" style="text-decoration:none">
+    <div style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--cafe-claro);margin-bottom:0.4rem">🎁 Lista de novios · Falabella</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:#9a7741;letter-spacing:0.1em">2104438</div>
+    <div style="font-size:0.75rem;color:#9a7741;margin-top:0.4rem;letter-spacing:0.05em">Ver lista de regalos en falabella.com →</div>
+  </a>
 </div>
 
 <!-- PIE -->
