@@ -155,7 +155,7 @@ input::placeholder{letter-spacing:0.1em;color:#938a78;font-size:0.9rem}
 
 <!-- PIE -->
 <div style="margin-top:2rem;text-align:center;padding-bottom:5rem">
-  <div style="font-size:0.75rem;color:#938a78;letter-spacing:0.05em">Creado por <a href="https://soluciones.healthfolio.lat/" target="_blank" style="color:#9a7741;text-decoration:none">soluciones.healthfolio.lat</a></div>
+  <div style="font-size:1.2rem;color:#938a78;letter-spacing:0.05em">Creado por <a href="https://soluciones.healthfolio.lat/" target="_blank" style="color:#9a7741;text-decoration:none">soluciones.healthfolio.lat</a></div>
 </div>
 
 <!-- WHATSAPP FLOTANTE -->
@@ -205,7 +205,16 @@ function confirmar(resp){
   fetch('https://sheetdb.io/api/v1/h39jdzj09k66s',{
     method:'POST',
     headers:{'Content-Type':'application/json','Accept':'application/json'},
-    body:JSON.stringify({data:{Código:cod,Nombre:nom,Respuesta:resp,Fecha:new Date().toLocaleDateString('es-CL'),Hora:new Date().toLocaleTimeString('es-CL')}})
+    body:(function(){
+    var now=new Date();
+    var dd=String(now.getDate()).padStart(2,'0');
+    var mm=String(now.getMonth()+1).padStart(2,'0');
+    var yyyy=now.getFullYear();
+    var hh=String(now.getHours()).padStart(2,'0');
+    var min=String(now.getMinutes()).padStart(2,'0');
+    var ss=String(now.getSeconds()).padStart(2,'0');
+    return JSON.stringify({data:{Código:cod,Nombre:nom,Respuesta:resp,Fecha:dd+'/'+mm+'/'+yyyy,Hora:hh+':'+min+':'+ss}});
+  })()
   }).catch(()=>{});
   mostrar('s3');
 }
