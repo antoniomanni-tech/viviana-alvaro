@@ -199,12 +199,11 @@ function confirmar(resp){
   document.getElementById('gmsg').textContent=si
     ?'¡Su asistencia fue registrada. Los esperamos para celebrar este día tan especial!'
     :'Gracias por avisarnos. ¡Los tendremos muy presentes en nuestro día!';
-  if(SCRIPT_URL){
-    fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({codigo:cod,nombre:nom,respuesta:resp})
-    }).catch(()=>{});
-  }
+  fetch('https://sheetdb.io/api/v1/h39jdzj09k66s',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({data:{Código:cod,Nombre:nom,Respuesta:resp,Fecha:new Date().toLocaleDateString('es-CL'),Hora:new Date().toLocaleTimeString('es-CL')}})
+  }).catch(()=>{});
   mostrar('s3');
 }
 
