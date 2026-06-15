@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--crema:#1C1C1E;--dorado:#C9A84C;--dorado-claro:#4A3F28;--cafe:#F5F0E8;--cafe-claro:#C8B89A;--blanco:#242426}
+:root{--crema:#f5f1e8;--dorado:#b08d57;--dorado-claro:#c8b189;--cafe:#3d382f;--cafe-claro:#6b6457;--blanco:#faf7f0}
 body{background:var(--crema);font-family:'Jost',sans-serif;font-weight:300;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem 1rem}
 .titulo{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:2.2rem;color:var(--cafe);text-align:center;line-height:1.1;white-space:nowrap}
 .titulo em{font-style:italic;color:var(--dorado)}
@@ -21,19 +21,19 @@ body{background:var(--crema);font-family:'Jost',sans-serif;font-weight:300;min-h
 .fala-link{font-size:0.72rem;color:var(--dorado);margin-top:0.2rem;letter-spacing:0.05em}
 input{width:100%;border:1px solid var(--dorado-claro);padding:0.9rem 1rem;font-family:'Jost',sans-serif;font-size:1.1rem;color:var(--cafe);background:var(--crema);text-align:center;letter-spacing:0.3em;outline:none;transition:border-color 0.2s}
 input:focus{border-color:var(--dorado)}
-input::placeholder{letter-spacing:0.1em;color:#7A6A50;font-size:0.9rem}
+input::placeholder{letter-spacing:0.1em;color:#938a78;font-size:0.9rem}
 .btn{width:100%;margin-top:0.8rem;padding:1rem;font-family:'Jost',sans-serif;font-size:0.95rem;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;border:none}
 .btn-s{background:var(--cafe);color:var(--crema)}
 .btn-s:hover{background:var(--dorado)}
 .btn-g{background:transparent;color:var(--cafe-claro);border:1px solid var(--dorado-claro)!important;margin-top:0.5rem}
 .btn-g:hover{border-color:var(--cafe)!important;color:var(--cafe)}
 .nombre{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:var(--cafe);margin:0.8rem 0}
-.err{color:#E07070;font-size:0.85rem;letter-spacing:0.08em;margin-top:0.8rem;display:none}
+.err{color:#a9542f;font-size:0.85rem;letter-spacing:0.08em;margin-top:0.8rem;display:none}
 .dato{font-size:0.9rem;color:var(--cafe-claro);letter-spacing:0.1em;margin:0.3rem 0}
 .dato strong{color:var(--dorado);font-weight:400}
 .badge{display:inline-block;font-size:0.7rem;letter-spacing:0.1em;padding:3px 12px;margin-bottom:0.8rem}
-.b-si{background:#1A3A2A;color:#6ECFA0}
-.b-no{background:#3A1A1A;color:#E07070}
+.b-si{background:#e8f5ef;color:#1f8a5b}
+.b-no{background:#faeee8;color:#a9542f}
 .screen{display:none}
 .screen.active{display:block}
 @keyframes parpadeo{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.4)}50%{box-shadow:0 4px 30px rgba(37,211,102,0.9);transform:scale(1.06)}}
@@ -116,7 +116,7 @@ input::placeholder{letter-spacing:0.1em;color:#7A6A50;font-size:0.9rem}
     <input type="text" id="cod" placeholder="0000" maxlength="4" oninput="this.value=this.value.replace(/[^0-9]/g,'')" inputmode="numeric">
     <div class="err" id="err">Código no encontrado. Verifica e intenta nuevamente.</div>
     <button class="btn btn-s" onclick="verificar()">Continuar →</button>
-    <p style="font-size:0.85rem;color:#7A6A50;margin-top:0.8rem;letter-spacing:0.06em;line-height:1.5">Ingresa los 4 dígitos de tu código personal</p>
+    <p style="font-size:0.85rem;color:#938a78;margin-top:0.8rem;letter-spacing:0.06em;line-height:1.5">Ingresa los 4 dígitos de tu código personal</p>
   </div>
 
   <!-- S2: Confirmar -->
@@ -145,14 +145,14 @@ input::placeholder{letter-spacing:0.1em;color:#7A6A50;font-size:0.9rem}
       <div class="fala-num">2104438</div>
       <div class="fala-link">Ver lista de regalos en falabella.com →</div>
     </a>
-    <p style="font-size:0.85rem;color:#7A6A50;margin-top:0.8rem;letter-spacing:0.06em">Por favor confirmen antes del 15 de diciembre de 2026</p>
+    <p style="font-size:0.85rem;color:#938a78;margin-top:0.8rem;letter-spacing:0.06em">Por favor confirmen antes del 15 de diciembre de 2026</p>
   </div>
 
 </div>
 
 <!-- PIE -->
 <div style="margin-top:2rem;text-align:center;padding-bottom:5rem">
-  <div style="font-size:0.75rem;color:#5A5A5A;letter-spacing:0.05em">Creado por <a href="https://soluciones.healthfolio.lat/" target="_blank" style="color:var(--dorado);text-decoration:none">soluciones.healthfolio.lat</a></div>
+  <div style="font-size:0.75rem;color:#938a78;letter-spacing:0.05em">Creado por <a href="https://soluciones.healthfolio.lat/" target="_blank" style="color:#9a7741;text-decoration:none">soluciones.healthfolio.lat</a></div>
 </div>
 
 <!-- WHATSAPP FLOTANTE -->
