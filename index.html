@@ -302,7 +302,7 @@ function confirmar(resp){
     var hh=String(now.getHours()).padStart(2,'0');
     var min=String(now.getMinutes()).padStart(2,'0');
     var ss=String(now.getSeconds()).padStart(2,'0');
-    return JSON.stringify({data:{Código:cod,Nombre:nom,Respuesta:resp,Fecha:dd+'/'+mm+'/'+yyyy,Hora:hh+':'+min+':'+ss}});
+    return JSON.stringify({data:{Código:cod,Nombre:nom,Respuesta:resp,Fecha:"'"+dd+'/'+mm+'/'+yyyy,Hora:"'"+hh+':'+min+':'+ss}});
   })()
   }).catch(()=>{});
   mostrar('s3');
