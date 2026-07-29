@@ -260,6 +260,16 @@ function verificar(){
   const e=document.getElementById('err');
   e.style.display='none';
   if(v.length!==4||!INV[v]){e.style.display='block';return;}
+
+  // Verificar si ya confirmó
+  const yaConfirmo = localStorage.getItem('confirmado_'+v);
+  if(yaConfirmo){
+    const respAnterior = localStorage.getItem('respuesta_'+v);
+    e.textContent='✅ Código ya utilizado — respuesta registrada.';
+    e.style.display='block';
+    return;
+  }
+
   cod=v; nom=INV[v];
   document.getElementById('nom').textContent=nom;
   const esP = nom.includes('&')||nom.includes('-Coni-');
