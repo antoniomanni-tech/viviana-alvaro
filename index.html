@@ -122,8 +122,8 @@ input::placeholder{letter-spacing:0.1em;color:#938a78;font-size:0.9rem}
     <p style="font-size:0.95rem;color:var(--cafe-claro);letter-spacing:0.08em">Hola,</p>
     <div class="nombre" id="nom"></div>
     <p style="font-size:0.95rem;color:var(--cafe-claro);letter-spacing:0.08em;margin:0.8rem 0 1.5rem;line-height:1.6">¿Nos acompañan el <strong>15 de enero de 2027</strong>?</p>
-    <button class="btn btn-s" onclick="confirmar('Asistiremos')">Asistiremos 🎉</button>
-    <button class="btn btn-g" onclick="confirmar('No podremos')">No podremos asistir</button>
+    <button class="btn btn-s" id="btn-si" onclick="confirmar(nom.includes('&')||nom.includes('-Coni-')?'Asistiremos':'Asistiré')"></button>
+    <button class="btn btn-g" id="btn-no" onclick="confirmar(nom.includes('&')||nom.includes('-Coni-')?'No podremos':'No podré')"></button>
   </div>
 
   <!-- S3: Gracias -->
@@ -262,19 +262,23 @@ function verificar(){
   if(v.length!==4||!INV[v]){e.style.display='block';return;}
   cod=v; nom=INV[v];
   document.getElementById('nom').textContent=nom;
+  const esP = nom.includes('&')||nom.includes('-Coni-');
+  document.getElementById('btn-si').textContent = esP?'Asistiremos 🎉':'Asistiré 🎉';
+  document.getElementById('btn-no').textContent = esP?'No podremos asistir':'No podré asistir';
   mostrar('s2');
 }
 
 function confirmar(resp){
-  const si=resp==='Asistiremos';
-  document.getElementById('ico').textContent=si?'🎉':'💛';
+  const esPareja = nom.includes('&') || nom.includes('e Ignacio') || nom.includes('-Coni-');
+  const asistio = resp==='Asistiremos' || resp==='Asistiré';
+  document.getElementById('ico').textContent=asistio?'🎉':'💛';
   const b=document.getElementById('bdg');
-  b.textContent=si?'¡Contamos con ustedes!':'Lo sentimos mucho';
-  b.className='badge '+(si?'b-si':'b-no');
+  b.textContent=asistio?(esPareja?'¡Contamos con ustedes!':'¡Contamos contigo!'):'Lo sentimos mucho';
+  b.className='badge '+(asistio?'b-si':'b-no');
   document.getElementById('gnom').textContent=nom;
-  document.getElementById('gmsg').textContent=si
-    ?'¡Su asistencia fue registrada. Los esperamos para celebrar este día tan especial!'
-    :'Gracias por avisarnos. ¡Los tendremos muy presentes en nuestro día!';
+  document.getElementById('gmsg').textContent=asistio
+    ?(esPareja?'¡Su asistencia fue registrada. Los esperamos para celebrar este día tan especial!':'¡Tu asistencia fue registrada. Te esperamos para celebrar este día tan especial!')
+    :(esPareja?'Gracias por avisarnos. ¡Los tendremos muy presentes en nuestro día!':'Gracias por avisarnos. ¡Te tendremos muy presente en nuestro día!');
   fetch('https://sheetdb.io/api/v1/h39jdzj09k66s',{
     method:'POST',
     headers:{'Content-Type':'application/json','Accept':'application/json'},
