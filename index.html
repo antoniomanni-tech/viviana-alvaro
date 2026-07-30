@@ -141,6 +141,21 @@ input::placeholder{letter-spacing:0.1em;color:#938a78;font-size:0.9rem}
     <p style="font-size:0.85rem;color:#938a78;margin-top:0.8rem;letter-spacing:0.06em">Por favor confirmen antes del 15 de diciembre de 2026</p>
   </div>
 
+  <!-- S4: Ya confirmó -->
+  <div class="screen" id="s4">
+    <div style="font-size:2.5rem;margin-bottom:0.8rem">🎉</div>
+    <div class="sub">¡Ya confirmaste!</div>
+    <div class="nombre" id="ya-confirmo-nom"></div>
+    <p style="font-size:0.95rem;color:var(--cafe-claro);letter-spacing:0.08em;margin-top:1rem;line-height:1.8">
+      Tu respuesta fue registrada exitosamente.<br>
+      No es necesario volver a confirmar.
+    </p>
+    <div class="linea"></div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--cafe);font-style:italic;margin-bottom:0.5rem">Viernes 15 de Enero, 2027 · 18:00 hrs</div>
+    <div class="dato"><strong>Ceremonia</strong> &nbsp;Parroquia del Niño Jesús</div>
+    <div class="dato"><strong>Recepción</strong> &nbsp;Casona Macul</div>
+  </div>
+
 </div>
 
 <!-- FALABELLA SEPARADO -->
@@ -261,23 +276,45 @@ function verificar(){
   e.style.display='none';
   if(v.length!==4||!INV[v]){e.style.display='block';return;}
 
-  // Verificar si ya confirmó
-  const yaConfirmo = localStorage.getItem('confirmado_'+v);
-  if(yaConfirmo){
-    const respAnterior = localStorage.getItem('respuesta_'+v);
-    e.textContent='✅ Código ya utilizado — respuesta registrada.';
-    e.style.display='block';
-    return;
-  }
+  // Primero verificar en SheetDB si ya confirmó
+  const btn = document.querySelector('.btn.btn-s');
+  btn.textContent='Verificando...';
+  btn.disabled=true;
 
-  cod=v; nom=INV[v];
-  document.getElementById('nom').textContent=nom;
-  const esP = nom.includes('&')||nom.includes('-Coni-');
-  document.getElementById('btn-si').textContent = esP?'Asistiremos 🎉':'Asistiré 🎉';
-  document.getElementById('btn-no').textContent = esP?'No podremos asistir':'No podré asistir';
-  document.getElementById('subtitulo-s2').textContent = esP?'¡Los esperamos!':'¡Te esperamos!';
-  document.getElementById('pregunta-s2').innerHTML = esP?'¿Nos acompañan el <strong>15 de enero de 2027</strong>?':'¿Nos acompañas el <strong>15 de enero de 2027</strong>?';
-  mostrar('s2');
+  fetch('https://sheetdb.io/api/v1/h39jdzj09k66s/search?Código='+v)
+    .then(r=>r.json())
+    .then(data=>{
+      btn.textContent='Continuar →';
+      btn.disabled=false;
+      if(data && data.length > 0){
+        // Ya confirmó — mostrar pantalla especial
+        document.getElementById('ya-confirmo-nom').textContent=INV[v];
+        mostrar('s4');
+        return;
+      }
+      // No ha confirmado — continuar normal
+      cod=v; nom=INV[v];
+      document.getElementById('nom').textContent=nom;
+      const esP = nom.includes('&')||nom.includes('-Coni-');
+      document.getElementById('btn-si').textContent = esP?'Asistiremos 🎉':'Asistiré 🎉';
+      document.getElementById('btn-no').textContent = esP?'No podremos asistir':'No podré asistir';
+      document.getElementById('subtitulo-s2').textContent = esP?'¡Los esperamos!':'¡Te esperamos!';
+      document.getElementById('pregunta-s2').innerHTML = esP?'¿Nos acompañan el <strong>15 de enero de 2027</strong>?':'¿Nos acompañas el <strong>15 de enero de 2027</strong>?';
+      mostrar('s2');
+    })
+    .catch(()=>{
+      btn.textContent='Continuar →';
+      btn.disabled=false;
+      // Si falla la verificación continuar normal
+      cod=v; nom=INV[v];
+      document.getElementById('nom').textContent=nom;
+      const esP = nom.includes('&')||nom.includes('-Coni-');
+      document.getElementById('btn-si').textContent = esP?'Asistiremos 🎉':'Asistiré 🎉';
+      document.getElementById('btn-no').textContent = esP?'No podremos asistir':'No podré asistir';
+      document.getElementById('subtitulo-s2').textContent = esP?'¡Los esperamos!':'¡Te esperamos!';
+      document.getElementById('pregunta-s2').innerHTML = esP?'¿Nos acompañan el <strong>15 de enero de 2027</strong>?':'¿Nos acompañas el <strong>15 de enero de 2027</strong>?';
+      mostrar('s2');
+    });
 }
 
 function confirmar(resp){
@@ -291,20 +328,26 @@ function confirmar(resp){
   document.getElementById('gmsg').textContent=asistio
     ?(esPareja?'¡Su asistencia fue registrada. Los esperamos para celebrar este día tan especial!':'¡Tu asistencia fue registrada. Te esperamos para celebrar este día tan especial!')
     :(esPareja?'Gracias por avisarnos. ¡Los tendremos muy presentes en nuestro día!':'Gracias por avisarnos. ¡Te tendremos muy presente en nuestro día!');
-  fetch('https://sheetdb.io/api/v1/h39jdzj09k66s',{
-    method:'POST',
-    headers:{'Content-Type':'application/json','Accept':'application/json'},
-    body:(function(){
-    var now=new Date();
-    var dd=String(now.getDate()).padStart(2,'0');
-    var mm=String(now.getMonth()+1).padStart(2,'0');
-    var yyyy=now.getFullYear();
-    var hh=String(now.getHours()).padStart(2,'0');
-    var min=String(now.getMinutes()).padStart(2,'0');
-    var ss=String(now.getSeconds()).padStart(2,'0');
-    return JSON.stringify({data:{Código:cod,Nombre:nom,Respuesta:resp,Fecha:"'"+dd+'/'+mm+'/'+yyyy}});
-  })()
-  }).catch(()=>{});
+  // Verificar en SheetDB si el código ya fue registrado
+  fetch('https://sheetdb.io/api/v1/h39jdzj09k66s/search?Código='+cod)
+    .then(r=>r.json())
+    .then(data=>{
+      if(data && data.length > 0){
+        // Ya existe — no registrar de nuevo
+        console.log('Código ya registrado');
+        return;
+      }
+      // No existe — registrar
+      var now=new Date();
+      var dd=String(now.getDate()).padStart(2,'0');
+      var mm=String(now.getMonth()+1).padStart(2,'0');
+      var yyyy=now.getFullYear();
+      fetch('https://sheetdb.io/api/v1/h39jdzj09k66s',{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify({data:{Código:cod,Nombre:nom,Respuesta:resp,Fecha:"'"+dd+'/'+mm+'/'+yyyy}})
+      }).catch(()=>{});
+    }).catch(()=>{});
   mostrar('s3');
 }
 
