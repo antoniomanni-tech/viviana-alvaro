@@ -295,7 +295,7 @@ function verificar(){
       // No ha confirmado — continuar normal
       cod=v; nom=INV[v];
       document.getElementById('nom').textContent=nom;
-      const esP = nom.includes('&')||nom.includes('-Coni-');
+      const esP = nom.includes('&')||nom.includes('-Coni-')||nom.includes(' e ')||nom.includes('-Victor-')||nom.includes('-Cristóbal-');
       document.getElementById('btn-si').textContent = esP?'Asistiremos 🎉':'Asistiré 🎉';
       document.getElementById('btn-no').textContent = esP?'No podremos asistir':'No podré asistir';
       document.getElementById('subtitulo-s2').textContent = esP?'¡Los esperamos!':'¡Te esperamos!';
@@ -308,7 +308,7 @@ function verificar(){
       // Si falla la verificación continuar normal
       cod=v; nom=INV[v];
       document.getElementById('nom').textContent=nom;
-      const esP = nom.includes('&')||nom.includes('-Coni-');
+      const esP = nom.includes('&')||nom.includes('-Coni-')||nom.includes(' e ')||nom.includes('-Victor-')||nom.includes('-Cristóbal-');
       document.getElementById('btn-si').textContent = esP?'Asistiremos 🎉':'Asistiré 🎉';
       document.getElementById('btn-no').textContent = esP?'No podremos asistir':'No podré asistir';
       document.getElementById('subtitulo-s2').textContent = esP?'¡Los esperamos!':'¡Te esperamos!';
