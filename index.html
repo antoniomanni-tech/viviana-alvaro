@@ -188,7 +188,7 @@ input::placeholder{letter-spacing:0.1em;color:#938a78;font-size:0.9rem}
 <script>
 const INV = {
   "7286": "Iván & Paulina",
-  "6582": "Paula-Victor-Cristóbal e Ignacio",
+  "6582": "Paula & Victor & Cristóbal & Ignacio",
   "1116": "Camila & Acompañante",
   "8743": "Cristián & Loreto",
   "4032": "Ernesto Correa",
@@ -318,7 +318,10 @@ function verificar(){
 }
 
 function confirmar(resp){
-  const esPareja = nom.includes('&') || nom.includes('e Ignacio') || nom.includes('-Coni-');
+  const esPareja = nom.includes('&')||nom.includes('-Coni-')||nom.includes(' e ')||nom.includes('-Victor-')||nom.includes('-Cristóbal-');
+  // Normalizar respuesta según si es pareja o individual
+  if(resp==='Asistiremos'||resp==='Asistiré') resp = esPareja?'Asistiremos':'Asistiré';
+  if(resp==='No podremos'||resp==='No podré') resp = esPareja?'No podremos':'No podré';
   const asistio = resp==='Asistiremos' || resp==='Asistiré';
   document.getElementById('ico').textContent=asistio?'🎉':'💛';
   const b=document.getElementById('bdg');
