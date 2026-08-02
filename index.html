@@ -40,6 +40,12 @@ input::placeholder{letter-spacing:0.1em;color:#938a78;font-size:0.9rem}
 .modal-box{background:var(--blanco);border:1px solid var(--dorado-claro);padding:2.5rem 2rem;max-width:380px;width:90%;text-align:center;border-radius:2px;animation:fadeInUp 0.3s ease}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .screen.active{display:block}
+/* MODAL */
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:999;align-items:center;justify-content:center;padding:1rem}
+.overlay.show{display:flex}
+.modal{background:var(--blanco);border:1px solid var(--dorado-claro);padding:2rem 1.5rem;max-width:360px;width:100%;text-align:center;animation:popUp 0.3s ease}
+@keyframes popUp{from{opacity:0;transform:scale(0.9)}to{opacity:1;transform:scale(1)}}
+
 @keyframes parpadeo{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.4)}50%{box-shadow:0 4px 30px rgba(37,211,102,0.9);transform:scale(1.06)}}
 .wa-float{animation:parpadeo 1.5s ease-in-out infinite}
 </style>
@@ -189,14 +195,14 @@ input::placeholder{letter-spacing:0.1em;color:#938a78;font-size:0.9rem}
   ¿Consultas?
 </a>
 
-<!-- MODAL FLOTANTE -->
-<div class="modal-overlay" id="modal">
-  <div class="modal-box">
-    <div style="font-size:0.9rem;color:var(--dorado);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.8rem" id="modal-subtitulo"></div>
-    <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-style:italic;color:var(--cafe);margin-bottom:0.8rem" id="modal-nombre"></div>
-    <p style="font-size:0.9rem;color:var(--cafe-claro);margin-bottom:1.5rem" id="modal-pregunta"></p>
-    <button class="btn btn-s" id="modal-btn-si" onclick="confirmarDesdeModal('si')" style="margin-bottom:0.5rem"></button>
-    <button class="btn btn-g" id="modal-btn-no" onclick="confirmarDesdeModal('no')"></button>
+<!-- MODAL -->
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <div style="font-size:0.85rem;color:var(--dorado);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.6rem" id="m-sub"></div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-style:italic;color:var(--cafe);margin:0.5rem 0 0.8rem" id="m-nom"></div>
+    <p style="font-size:0.88rem;color:var(--cafe-claro);margin-bottom:1.5rem;line-height:1.6" id="m-preg"></p>
+    <button class="btn btn-s" id="m-si" onclick="doConfirmar(true)" style="margin-bottom:0.6rem"></button>
+    <button class="btn btn-g" id="m-no" onclick="doConfirmar(false)"></button>
   </div>
 </div>
 
